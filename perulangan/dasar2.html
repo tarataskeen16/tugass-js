@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menampilkan Bilangan dari Batas Awal ke Batas Akhir</title>
+</head>
+<body>
+  <h1>Menampilkan Bilangan</h1>
+  
+  <label for="batasAwal">Batas Awal (bilangan > 0):</label>
+  <input type="number" id="batasAwal" placeholder="Batas Awal" min="1">
+  <br><br>
+  
+  <label for="batasAkhir">Batas Akhir (>= Batas Awal):</label>
+  <input type="number" id="batasAkhir" placeholder="Batas Akhir" min="1">
+  <br><br>
+  
+  <button 
+    onclick="
+      var batasAwal = parseInt(document.getElementById('batasAwal').value);
+      var batasAkhir = parseInt(document.getElementById('batasAkhir').value);
+      
+      if (batasAwal > 0 && batasAkhir > 0 && batasAwal <= batasAkhir) {
+        var numbers = [];
+        for (var i = batasAwal; i <= batasAkhir; i++) {
+          numbers.push(i);
+        }
+        console.log('Bilangan dari ' + batasAwal + ' sampai ' + batasAkhir + ': ' + numbers.join(', '));
+      } else {
+        console.error('Input tidak valid! Batas Awal harus lebih besar dari 0 dan Batas Akhir harus lebih besar atau sama dengan Batas Awal.');
+      }
+    ">
+    Tampilkan Bilangan
+  </button>
+</body>
+</html>

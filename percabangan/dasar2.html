@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Bilangan Positif, Negatif, atau Nol</title>
+</head>
+<body>
+    <h1>Cek Bilangan Positif, Negatif, atau Nol</h1>
+
+    <label for="angka">Masukkan sebuah bilangan:</label>
+    <input type="number" id="angka" value="1"> <!-- Inputan default nilai 1 -->
+
+    <button onclick="cekPositif()">Cek Bilangan</button>
+
+    <p id="output"></p> <!-- Untuk menampilkan hasil -->
+
+    <script>
+        // Fungsi untuk mengecek apakah bilangan positif, negatif, atau nol
+        function cekPositif() {
+            const x = document.getElementById("angka").value; // Ambil nilai dari inputan
+            const output = document.getElementById("output"); // Ambil elemen output
+
+            if (x > 0) {
+                output.innerText = x + " adalah bilangan positif.";
+            } else if (x < 0) {
+                output.innerText = x + " adalah bilangan negatif.";
+            } else {
+                output.innerText = x + " adalah nol.";
+            }
+        }
+
+        // Set default value (Inputan nilai 1)
+        var x = 1;
+        cekPositif(x); // Menjalankan fungsi dengan nilai default
+    </script>
+</body>
+</html>

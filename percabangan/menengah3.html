@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menentukan Akar-Akar Persamaan Kuadrat</title>
+</head>
+<body>
+    <h1>Menentukan Akar-Akar Persamaan Kuadrat</h1>
+
+    <label for="nilaiA">Masukkan nilai a:</label>
+    <input type="number" id="nilaiA" value="1">
+
+    <br><br>
+
+    <label for="nilaiB">Masukkan nilai b:</label>
+    <input type="number" id="nilaiB" value="1">
+
+    <br><br>
+
+    <label for="nilaiC">Masukkan nilai c:</label>
+    <input type="number" id="nilaiC" value="1">
+
+    <br><br>
+
+    <button onclick="cekAkarPersamaan()">Cek Akar-Akar</button>
+
+    <p id="output"></p>
+
+    <script>
+        function cekAkarPersamaan() {
+            const a = parseInt(document.getElementById('nilaiA').value);
+            const b = parseInt(document.getElementById('nilaiB').value);
+            const c = parseInt(document.getElementById('nilaiC').value);
+            const output = document.getElementById('output');
+
+            const diskriminan = (b * b) - (4 * a * c);
+
+            if (diskriminan > 0) {
+                const x1 = (-b + Math.sqrt(diskriminan)) / (2 * a);
+                const x2 = (-b - Math.sqrt(diskriminan)) / (2 * a);
+                output.innerText = "Akar-akar real dan berbeda: x1 = " + x1 + ", x2 = " + x2;
+            } else if (diskriminan === 0) {
+                const x = -b / (2 * a);
+                output.innerText = "Akar-akar real dan sama: x = " + x;
+            } else {
+                output.innerText = "Akar-akar imajiner (tidak real).";
+            }
+        }
+    </script>
+</body>
+</html>

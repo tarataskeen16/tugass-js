@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Kelipatan Bilangan</title>
+</head>
+<body>
+    <h1>Cek Apakah a adalah Kelipatan dari b</h1>
+
+    <label for="bilanganA">Masukkan bilangan pertama (a):</label>
+    <input type="number" id="bilanganA" value="2"> <!-- Inputan default nilai a = 2 -->
+
+    <br><br>
+
+    <label for="bilanganB">Masukkan bilangan kedua (b):</label>
+    <input type="number" id="bilanganB" value="2"> <!-- Inputan default nilai b = 2 -->
+
+    <br><br>
+
+    <button onclick="cekKelipatan()">Cek Kelipatan</button>
+
+    <p id="output"></p> <!-- Untuk menampilkan hasil -->
+
+    <script>
+        // Fungsi untuk mengecek apakah a adalah kelipatan dari b
+        function cekKelipatan() {
+            const a = document.getElementById("bilanganA").value; // Ambil nilai dari inputan pertama (a)
+            const b = document.getElementById("bilanganB").value; // Ambil nilai dari inputan kedua (b)
+            const output = document.getElementById("output");     // Ambil elemen output
+
+            if (a >= b && a > 0) {
+                if (a % b === 0) {
+                    output.innerText = a + " adalah kelipatan dari " + b;
+                } else {
+                    output.innerText = a + " bukan kelipatan dari " + b;
+                }
+            } else {
+                output.innerText = "Syarat tidak terpenuhi: pastikan a >= b dan a > 0";
+            }
+        }
+
+        // Set default value (a = 2, b = 2)
+        var a = 2;
+        var b = 2;
+        cekKelipatan(a, b); // Menjalankan fungsi dengan nilai default
+    </script>
+</body>
+</html>

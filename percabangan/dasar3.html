@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Hubungan Dua Bilangan</title>
+</head>
+<body>
+    <h1>Cek Hubungan Dua Bilangan</h1>
+
+    <label for="angka1">Masukkan bilangan pertama (x):</label>
+    <input type="number" id="angka1" value="2"> <!-- Inputan default nilai x = 2 -->
+
+    <br><br>
+
+    <label for="angka2">Masukkan bilangan kedua (y):</label>
+    <input type="number" id="angka2" value="2"> <!-- Inputan default nilai y = 2 -->
+
+    <br><br>
+
+    <button onclick="cekHubungan()">Cek Hubungan</button>
+
+    <p id="output"></p> <!-- Untuk menampilkan hasil -->
+
+    <script>
+        // Fungsi untuk mengecek hubungan antara dua bilangan
+        function cekHubungan() {
+            const x = document.getElementById("angka1").value; // Ambil nilai dari inputan pertama
+            const y = document.getElementById("angka2").value; // Ambil nilai dari inputan kedua
+            const output = document.getElementById("output");  // Ambil elemen output
+
+            if (x > y) {
+                output.innerText = x + " lebih besar dari " + y;
+            } else if (x < y) {
+                output.innerText = x + " lebih kecil dari " + y;
+            } else {
+                output.innerText = x + " sama dengan " + y;
+            }
+        }
+
+        // Set default value (x = 2, y = 2)
+        var x = 2;
+        var y = 2;
+        cekHubungan(x, y); // Menjalankan fungsi dengan nilai default
+    </script>
+</body>
+</html>

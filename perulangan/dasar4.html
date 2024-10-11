@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menampilkan Bilangan Ganjil</title>
+</head>
+<body>
+    <h1>Menampilkan Bilangan Ganjil</h1>
+
+    <label for="batasAwal">Masukkan batas awal:</label>
+    <input type="number" id="batasAwal" min="1" placeholder="Batas Awal">
+    <br><br>
+
+    <label for="batasAkhir">Masukkan batas akhir:</label>
+    <input type="number" id="batasAkhir" min="1" placeholder="Batas Akhir">
+    <br><br>
+
+    <button
+        onclick="
+            var batasAwal = parseInt(document.getElementById('batasAwal').value);
+            var batasAkhir = parseInt(document.getElementById('batasAkhir').value);
+            
+            if (batasAwal > 0 && batasAkhir > 0 && batasAwal <= batasAkhir) {
+                var hasil = '';
+                for (var i = batasAwal; i <= batasAkhir; i++) {
+                    if (i % 2 !== 0) {
+                        hasil += i + ' ';
+                    }
+                }
+                console.log('Bilangan ganjil dari ' + batasAwal + ' sampai ' + batasAkhir + ': ' + hasil.trim());
+            } else {
+                console.error('Input tidak valid! Pastikan batasAwal lebih besar dari 0 dan batasAkhir lebih besar atau sama dengan batasAwal.');
+            }
+        ">
+        Tampilkan Bilangan Ganjil
+    </button>
+</body>
+</html>

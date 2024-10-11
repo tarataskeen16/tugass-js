@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Ganjil atau Genap</title>
+</head>
+<body>
+    <h1>Cek Bilangan Ganjil atau Genap</h1>
+
+    <label for="angka">Masukkan sebuah bilangan:</label>
+    <input type="number" id="angka" value="1"> <!-- Inputan default nilai 1 -->
+    
+    <button onclick="cekGanjilGenap()">Cek Bilangan</button>
+
+    <p id="output"></p> <!-- Untuk menampilkan hasil -->
+
+    <script>
+        // Fungsi untuk mengecek apakah bilangan ganjil atau genap
+        function cekGanjilGenap() {
+            const x = document.getElementById("angka").value; // Ambil nilai dari inputan
+            const output = document.getElementById("output"); // Ambil elemen output
+
+            if (x % 2 === 0) {
+                output.innerText = x + " adalah bilangan genap.";
+            } else {
+                output.innerText = x + " adalah bilangan ganjil.";
+            }
+        }
+
+        // Set default value (Inputan nilai 1)
+        var x = 1;
+        cekGanjilGenap(x); // Menjalankan fungsi dengan nilai default
+    </script>
+</body>
+</html>

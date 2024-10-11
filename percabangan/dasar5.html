@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Nama Hari Berdasarkan Nomor Hari</title>
+</head>
+<body>
+    <h1>Cek Nama Hari Berdasarkan Nomor Hari</h1>
+
+    <label for="noHari">Masukkan nomor hari (1-7):</label>
+    <input type="number" id="noHari" value="1" min="1" max="7"> <!-- Inputan default nilai 1 -->
+
+    <br><br>
+
+    <button onclick="namaHari()">Cek Nama Hari</button>
+
+    <p id="output"></p> <!-- Untuk menampilkan hasil -->
+
+    <script>
+        // Fungsi untuk menentukan nama hari berdasarkan nomor hari
+        function namaHari() {
+            const noHari = document.getElementById("noHari").value; // Ambil nilai nomor hari dari inputan
+            const output = document.getElementById("output"); // Ambil elemen output
+
+            switch (parseInt(noHari)) {
+                case 1:
+                    output.innerText = "MINGGU";
+                    break;
+                case 2:
+                    output.innerText = "SENIN";
+                    break;
+                case 3:
+                    output.innerText = "SELASA";
+                    break;
+                case 4:
+                    output.innerText = "RABU";
+                    break;
+                case 5:
+                    output.innerText = "KAMIS";
+                    break;
+                case 6:
+                    output.innerText = "JUMAT";
+                    break;
+                case 7:
+                    output.innerText = "SABTU";
+                    break;
+                default:
+                    output.innerText = "Nomor hari tidak valid, masukkan angka antara 1 sampai 7.";
+            }
+        }
+
+        // Set default value (noHari = 1)
+        var noHari = 1;
+        namaHari(noHari); // Menjalankan fungsi dengan nilai default
+    </script>
+</body>
+</html>
